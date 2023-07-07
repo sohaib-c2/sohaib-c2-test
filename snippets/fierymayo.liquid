@@ -1,0 +1,257 @@
+{% style %}
+  --flickitydotswidth : 100px;
+  /*   Fallback fonts list since we are using font files(Exo) and sometimes they dont work */
+  
+  {% assign fonts = ",BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,'Helvetica Neue', Arial, 'Lucida Grande', sans-serif" %}
+  
+  /*///////////////////////////////////// */
+  /*   Mobile header menu dropdown styles */
+  /*///////////////////////////////////// */
+  
+/*   
+  .navbar-link {
+    font-family: {{'Exo Regular ' | append: fonts }};
+    font-size: 16px; 
+  }
+  .navbar-link:not(.is-arrowless) {
+    padding-right: 0.75em; 
+  }
+  .navbar-item.has-dropdown a:after, .navbar-item.has-mega-menu a:after {
+    display: none !important; 
+  } 
+  .dropdown-style-horizontal .navbar-item.is-hoverable:hover .navbar-dropdown .section {
+     justify-content: center; justify-content: center;
+      width: 100%;
+  } 
+  .horizontal-dropdown__column.has-submenu .navbar-submenu {
+    border-left: 0px; margin: 0px; 
+  }
+  .horizontal-dropdown__column.has-submenu .navbar-submenu .navbar-item {
+    padding-left: 0px; font-weight: normal; text-align: left; margin-bottom: 5px; 
+    font-family: {{'Exo Regular ' | append: fonts }};
+    font-size: 16px; 
+  }
+  .horizontal-dropdown__column.has-submenu {
+     padding: 20px; text-align: left;
+      width: 22%;
+  } 
+  */
+  .navbar-item.has-mega-menu .mega-menu {
+    max-width: 70%; margin-left: 15%; min-width: 70%; 
+    padding: 20px;
+  }
+  .mega-menu .menu__heading {
+    padding-bottom: 10px; border-bottom: 1px solid #fff; max-width: 94%; margin-left: 0px; 
+    padding-left: 0px;  margin-bottom: 20px; font-size: 18px; 
+  }
+
+  
+    /*/////////////// */ 
+   /*  Footer Blocks Css */
+  /*/////////////// */ 
+  .footer__menu p.footer__heading , .footer__block.block__newsletter  span[data-icon="email"] , 
+  .d-none {
+    display: none; 
+  }
+  .footer__menu a {
+    font-size: 16px; line-height: 25px; 
+    font-family: {{'Exo Regular ' | append: fonts }};
+  }
+  .footer__block.block__newsletter div.field , .footer__block.block__newsletter div.field div.control   {
+     width: 100%; max-width: 100%; 
+  }
+
+  
+  /*/////////////////////////////////////////////////////////// */ 
+  /*   Footer Block Newsletter Styles */
+  /*/////////////////////////////////////////////////////////// */ 
+
+  button.in-email span.icon {
+    max-width: 80%; height: auto; margin: 0px auto; 
+  }
+  button.in-email {
+    height: 1.5em; width: 1.8em; padding: 0px; top: 26%;; 
+    position: absolute; right: 0.5em; border-radius: 4px;
+  }
+  button.in-email:hover svg , button.in-email:focus svg {
+    fill: #00badb; 
+  }
+  
+  .footer__block.block__newsletter div.field input[type="email"] {
+    height: 64px; border-radius: 8px; padding-left: 0.5em;
+  }
+  .footer__block.block__newsletter div.field input[type="email"]::-moz-placeholder {
+      font-size: 14px; 
+  }
+  .footer__block.block__newsletter div.field input[type="email"]::placeholder {
+      font-size: 14px; 
+  }
+
+  /*/////////////////////////////////////////////////////////// */ 
+  /*   Buttons Has no border if its background is transparent */
+  /*/////////////////////////////////////////////////////////// */ 
+  
+  .button:not(.in-email):not(div) {
+    border-style: solid; min-height: 54px; display: flex; align-items:center; 
+  }
+  .button:hover , .button:focus {
+    border-style: solid; 
+  }
+  
+  /*/////////////////////////////////////////////////////////// */ 
+  /*   Feature Collection Slider Css For Dots and arrows */
+  /*/////////////////////////////////////////////////////////// */ 
+  .featured-collection-section  .flickity-page-dots {
+    display: flex; align-items: center; 
+  }
+ 
+  .featured-collection-section .flickity-button:disabled {
+    display: none; 
+  }
+  
+ .product__thumbnail .product-wrap {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1); 
+    padding-bottom: 10px; margin: 5px 0px; 
+  }
+ .product__thumbnail .product-thumbnail__title {
+    font-size: 18px; width: 100%; 
+    min-height: 47px; font-weight: bold; 
+  }
+  .has-thumbnail-sticker .product-thumbnail__price {
+    display: none; 
+  }
+  .product__thumbnail .product__imageContainer {
+    position: relative;padding-bottom: 85%; overflow: hidden;
+  }
+  .product__thumbnail .image-element__wrap {
+    background-color: #d9d9d9;  max-height: unset !important; 
+     max-width: 100% !important; width: 100% !important; 
+  }
+  .product-thumbnail {
+    padding: 5px 8px; padding-top: 10px; 
+  }
+  .arrow-link {
+    text-align: right; margin-top: 10px; 
+  }
+  .product__thumbnail .image-element__wrap img {
+    position: absolute; width: auto !important; max-height: 100% !important; 
+    height: 100% !important; left: 0px; top: 0px; right: 0;bottom: 0;; 
+    margin: 0px auto
+  }
+  .featured-collection-section flickity-button:disabled{
+    display: none; 
+  }
+  .featured-collection-section .flickity-button {
+    top: 45%; 
+  }
+  .featured-collection-section .flickity-page-dots {
+    right: 5px; bottom: 10px; 
+  }
+  /*   
+  .featured-collection-section .featured-collection .flickity-slider {
+    display: flex; 
+  }
+  .featured-collection-section .featured-collection .flickity-slider .product__thumbnail {
+    display: flex; height: 100%; 
+  } 
+  */
+  /* Common Styles Like Buttons Color padding etc*/
+  .featured-collection-section a.button {
+    min-height: 54px; display: flex; align-items: center; 
+    border-radius: 8px; min-width: 160px; margin-top: 30px; 
+  }
+  .blog-card__read-more a:hover, .blog-card__read-more a:focus {
+    color: {{settings.link_hover_color}} !important; opacity: 1; 
+  }
+  .blog-card__read-more a.button {
+    text-align: left; background: unset !important; opacity: 1;  font-size: 80%; 
+    text-decoration: unset !important; border-bottom: unset !important; font-weight: bold; 
+    justify-content: flex-start; width: auto !important; min-height: unset; 
+  }
+  .blog-card__content .excerpt {
+    max-height: 4.7em; line-height: 1.5em; margin-bottom: 0px; 
+  }
+  .blog-card__content .title.is-text {
+    margin-bottom: 1rem;  font-size: 18px;
+  }
+  .blog-card__content .truncation-fade , .blog-card__content .meta-info {
+    display: none; 
+  }
+  /* Media Queries For Mobile */
+
+/*   .slideshow-classic .flickity-button.next {
+    right: calc(100% - var(--flickitydotswidth) - 10px);
+  }
+  .slideshow-classic .flickity-button.previous {
+    left: calc(100% - var(--flickitydotswidth) - 10px);
+  } */
+
+  #currency-heading-header__selector-form--top-bar+.disclosure--currency.disclosure .disclosure__list-wrap {
+    z-index: 52; font-family: {{'Exo Regular ' | append: fonts }};
+    font-size: 16px; text-transform: initial; 
+  }
+  #currency-heading-header__selector-form--top-bar+.disclosure--currency.disclosure button.disclosure__toggle {
+    font-family: {{'Exo Regular ' | append: fonts }};
+    background: unset; padding: 5px 7px; border-style: solid; 
+    font-size: 16px; text-transform: initial !important; color: #fff; 
+  }
+
+  .faq__block-main .faq__block-title {
+    display: none; 
+  }
+  .faq__block-faq .faq__item, .faq__block-faq:last-child .faq__item {
+    border-radius: 8px; border-color: #000; border-bottom: 1px solid; 
+    margin-bottom: 30px; 
+  }
+  .faq__tags .faq__tags-tag {
+     padding: 15px 30px;
+     border-radius: 8px; margin: 0px; 
+     width: 20%; flex: 0 1 20%; 
+  }
+  .faq__tags-tag:not(:first-child){
+    margin-left: auto; 
+  }
+  .header-cart__count {
+    background: unset; top: -0.5rem;
+    left: calc(90% - 0.2rem);
+  }
+  .sidebar__block.block__faceted-filtering {
+    background: #F5F5F5;
+    padding: 20px;  margin-bottom: 20px; 
+  }
+  .sidebar__block.block__faceted-filtering .sidebar-block__heading {
+    color: #00badb; cursor: pointer; 
+  }
+  .sidebar__block.block__faceted-filtering .sidebar-block__heading svg {
+    color: #00badb;cursor: pointer; 
+  }
+  .faceted-filter-group-display__checkmark {
+    border-radius: 50%; 
+  }
+  .ajax-loading.collection__main  .button.is-loading--icon-only {
+    display: block; 
+  }
+  .ajax-loading.collection__main .collection-matrix , .ajax-loading.collection__main .paginate {
+    display: none; 
+  }
+  .faceted-filter-group-summary__active-count {
+    display: none; 
+  }
+  .faceted-filter-group-summary__active-count.active {
+    display: initial; 
+  }
+  .keepopened [data-sidebar-block__content--collapsible] {
+    display: initial !important; 
+  }
+  @media only screen and (min-width:799px){
+    .collection__main {
+      padding-left: 20px; margin-top: -5px; 
+    }
+  }
+  @media only screen and (max-width: 798px){
+    .flickity-prev-next-button {
+      display: initial !important; 
+    }
+  }
+{% endstyle %}
+{% render 'pricerangecss' %}

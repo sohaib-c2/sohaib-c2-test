@@ -1,0 +1,53 @@
+<label class="recipient-checkbox" for="Recipient-Checkbox-{{ section.id }}">
+      <input
+      id="Recipient-Checkbox-{{ section.id }}"
+      type="checkbox"
+      unchecked
+    >
+    <span>{{ 'products.general.recipient.form.checkbox' | t }}</span>
+</label>
+<div class="custom-contact-form__blocks is-flex is-flex-wrap">
+  {% if form.errors %}
+    <div class="custom-contact-form__errors">
+      <p>{{ 'general.forms.post_error' | t }}</p>
+    </div>
+  {% endif %}
+  {%- assign gift_card_recipient_control_flag = 'properties[__shopify_send_gift_card_to_recipient]' -%}
+  <div class="custom-contact-form__block custom-contact-form__block--email one-whole medium-down--one-whole column">
+    <label class="label is-sr-only" for="email">
+      {{ 'products.general.recipient.form.email' | t }}
+      <span class="required">*</span>
+    </label>
+    <input id="email" class="input is-primary-btn-style is-large" type="email" 
+      placeholder="{{ 'products.general.recipient.form.email' | t }}" 
+      name="properties[Recipient email]"
+      autocorrect="off" autocapitalize="off" value="" required="required">
+  </div>
+  <div class="custom-contact-form__block custom-contact-form__block--textfield one-whole medium-down--one-whole column">
+    <label class="label is-sr-only" for="textfield">
+       {{- 'products.general.recipient.form.name_label' | t -}}
+    </label>
+    <input id="textfield" class="input is-primary-btn-style is-large" type="text" 
+       placeholder="{{ 'products.general.recipient.form.name' | t }}" name="properties[Recipient name]">
+  </div>
+  {%- assign max_chars_message = 200 -%}
+  {%- assign max_chars_message_rendered = 'products.general.recipient.form.max_characters' | t: max_chars: max_chars_message -%}
+  {%- assign message_label_rendered = 'products.general.recipient.form.message_label' | t -%}
+      
+  <div class="custom-contact-form__block custom-contact-form__block--textarea one-whole medium-down--one-whole column">
+    <label class="label is-sr-only" for="textarea">
+     {{ message_label_rendered }}
+    </label>
+    <textarea id="textarea" class="textarea is-primary-btn-style is-large" 
+      placeholder="{{ 'products.general.recipient.form.message' | t }}"
+      name="properties[Message]"
+      maxlength="{{ max_chars_message }}"
+      >{%  if form.message %} {% endif %}</textarea>
+  </div>
+  <input
+    type="hidden"
+    name="{{ gift_card_recipient_control_flag }}"
+    value="if_present"
+    id="Recipient-Control-{{ section.id }}"
+  >
+</div>

@@ -1,0 +1,45 @@
+
+<div class="range">
+  <div class="range-slider">
+    <span class="range-selected" ></span>
+  </div>
+  <div class="range-input">
+    <input
+    name="{{ filter.min_value.param_name }}"
+    type="range" class="min" min="0" step="5"
+    {% if filter.min_value.value -%}
+      value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+      {% else  %}
+      value="0"
+    {%- endif %}
+    data-default = "0"
+    max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+    >
+    <input  
+      name="{{ filter.max_value.param_name }}"
+      {% if filter.max_value.value -%}
+        value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+      {% else %}
+        value = "0"
+      {%- endif %}
+      data-default = "0"
+      type="range" class="max" min="0" 
+      max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+      step="5"
+      >
+  </div>
+  <div class="range-price">      
+   
+    <span data-currency = "{{ cart.currency.symbol }}" >
+    {% if filter.min_value.value -%}
+      {{ filter.min_value.value | money | replace: ',', '' }}
+    {%- endif %}
+    </span> 
+
+    <span data-currency = "{{ cart.currency.symbol }}" >
+      {% if filter.max_value.value -%}
+        {{ filter.max_value.value | money | replace: ',', '' }}
+      {%- endif %}
+    </span>
+  </div>
+</div>  

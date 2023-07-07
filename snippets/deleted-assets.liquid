@@ -1,0 +1,55 @@
+<!-- DNS prefetches -->
+<link rel="dns-prefetch" href="https://cdn.shopify.com">
+<link rel="dns-prefetch" href="https://fonts.shopify.com">
+<link rel="dns-prefetch" href="https://monorail-edge.shopifysvc.com">
+<link rel="dns-prefetch" href="https://ajax.googleapis.com">
+
+{% if settings.enable_shopify_review_comments %}
+  <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+{% endif %}
+
+<!-- Preconnects -->
+<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+<link rel="preconnect" href="https://fonts.shopify.com" crossorigin>
+<link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+<link rel="preconnect" href="https://ajax.googleapis.com">
+
+{% if settings.enable_shopify_review_comments %}
+  <link rel="preconnect" href="https://productreviews.shopifycdn.com">
+{% endif %}
+
+<!-- Preloads -->
+<!-- Preload CSS -->
+<link rel="preload" href="{{ 'fancybox.css' | asset_url }}" as="style">
+<link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style">
+
+<!-- Preload JS -->
+<link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+<link rel="preload" href="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" as="script">
+
+<!-- jQuery UI -->
+<link rel="preload" href="{{ 'vendor.js' | asset_url }}" as="script">
+<link rel="preload" href="{{ 'utilities.js' | asset_url }}" as="script">
+<link rel="preload" href="{{ 'app.js' | asset_url }}" as="script">
+
+{% if settings.show_multiple_currencies or shop.enabled_currencies.size > 1 %}
+  <link rel="preload" href="/services/javascripts/currencies.js" as="script">
+  <link rel="preload" href="{{ 'currencyConversion.js' | asset_url }}" as="script">
+{% endif %}
+
+{% if settings.enable_shipping_calculator and template.name == 'cart' %}
+  <link rel="preload" href="{{ 'shopify_common.js' | shopify_asset_url }}" as="script">
+  <link rel="preload" href="{{ 'api.jquery.js' | shopify_asset_url }}" as="script">
+  <link rel="preload" href="{{ 'countries.js' | shopify_asset_url }}" as="script">
+{% endif %}
+
+{%- if template.directory == 'customers' -%}
+  <link rel="preload" href="{{ 'shopify_common.js' | shopify_asset_url }}" as="script">
+  <link rel="preload" href="{{ 'customer_area.js' | shopify_asset_url }}" as="script">
+{%- endif -%}
+
+{% if settings.disqus_enabled %}
+  {% if template.name == 'blog' or template.name == 'article' or template.name == 'index' %}
+    <link rel="preload" href="//{{ settings.disqus_shortname }}.disqus.com/count.js" as="script">
+  {% endif %}
+{% endif %}

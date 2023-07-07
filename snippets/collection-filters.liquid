@@ -1,0 +1,76 @@
+
+ {% style %}
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      z-index: 1;
+    }
+    .dropdown-content.active {
+      display: block;
+    }
+    .accordion {
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    .accordion-heading {
+      background-color: #f1f1f1;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px;
+    }
+    .checkbox {
+      margin-bottom: 5px;
+    }
+ {% endstyle %}
+
+  <div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropdown-toggle">Toggle Dropdown</button>
+    <div id="dropdown-content" class="dropdown-content">
+      <div class="accordion">
+        <div class="accordion-heading" onclick="toggleAccordion(this)">Accordion 1</div>
+        <div class="accordion-content">
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox1" name="checkbox1">
+            <label for="checkbox1">Checkbox 1</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox2" name="checkbox2">
+            <label for="checkbox2">Checkbox 2</label>
+          </div>
+        </div>
+      </div>
+      <div class="accordion">
+        <div class="accordion-heading" onclick="toggleAccordion(this)">Accordion 2</div>
+        <div class="accordion-content">
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox3" name="checkbox3">
+            <label for="checkbox3">Checkbox 3</label>
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" id="checkbox4" name="checkbox4">
+            <label for="checkbox4">Checkbox 4</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      var dropdownContent = document.getElementById("dropdown-content");
+      dropdownContent.classList.toggle("active");
+    }
+
+    function toggleAccordion(accordionHeading) {
+      var accordionContent = accordionHeading.nextElementSibling;
+      accordionContent.style.display = (accordionContent.style.display === "none") ? "block" : "none";
+    }
+  </script>
+
