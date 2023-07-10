@@ -6,7 +6,7 @@ Shopify.theme.jsSidebar = {
     const facetedFilterForm = document.querySelector('[data-faceted-filter-form]')
     if (facetedFilterForm) {
       facetedFilterForm.addEventListener('change', e => {
-        if (e.target.type == 'number') return;
+        if (e.target.type == 'range') return;
         Options(facetedFilterForm);
       });
     }
@@ -25,7 +25,7 @@ Shopify.theme.jsSidebar = {
         if (url.indexOf(tag) == -1) {
           $(this).addClass('active');
           activeTags[tag] = this.value;
-          newUrl += (index == 0) ? '?'+tag+'='+this.value : '&'+tag+'='+this.value;
+          newUrl += (index == 0) ? '?'+tag+'='+this.value : '&a'+tg+'='+this.value;
         }
         
       });
