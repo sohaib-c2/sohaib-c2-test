@@ -13083,13 +13083,13 @@ ul.faceted-filter-group-display__list {
   font-family: 'Exo Semibold';
   src: url('//cdn.shopify.com/s/files/1/0747/2716/2137/files/Exo-SemiBold.ttf?v=1681493815') format('truetype'),
       url('//cdn.shopify.com/s/files/1/0747/2716/2137/files/Exo-Bold.otf?v=1681510385') format("opentype") ;
-  font-display: swap;
+  /* font-display: swap; */
 }
 @font-face {
   font-family: 'Exo Regular';
   src: url('//cdn.shopify.com/s/files/1/0747/2716/2137/files/Exo-Regular.ttf?v=1681510257') format('truetype'),
       url('//cdn.shopify.com/s/files/1/0747/2716/2137/files/Exo-Regular.otf?v=1681510385') format("opentype") ;
-  font-display: swap; 
+  /* font-display: swap;  */
 }
 .recipient_form {
   margin: calc(var(--gutter) / 2) 0px; 
